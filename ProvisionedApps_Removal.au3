@@ -1,5 +1,5 @@
 #NoTrayIcon
-;#RequireAdmin
+#RequireAdmin
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=Alex-T-Fresh-Fruit-Pomegranate.ico
 #AutoIt3Wrapper_Outfile_x64=AppXpro.exe
@@ -18,7 +18,7 @@ If UBound(ProcessList(@ScriptName)) > 2 Then Exit ; added to make only one insta
 ;https://www.digitalcitizen.life/how-reinstall-all-windows-10-default-apps-powershell
 ;https://superuser.com/questions/958562/how-do-i-remove-candy-crush-saga-from-windows-10
 ; https://blog.danic.net/provisioned-apps-in-windows-10-pro/
-Sleep(30000)
+Sleep(60000)
  $u = 'powershell -Command ' & '"' & 'Get-AppxPackage *candycrush* -allusers | Remove-AppxPackage' & '"'
  _GetDOSOutput($u)
  $u = 'powershell -Command ' & '"' & 'Get-AppxPackage *xbox* -allusers | Remove-AppxPackage' & '"'
@@ -30,6 +30,10 @@ Sleep(30000)
  $u = 'powershell -Command ' & '"' & 'Get-AppxPackage *officehub* -allusers | Remove-AppxPackage' & '"'
  _GetDOSOutput($u)
   $u = 'powershell -Command ' & '"' & 'Get-AppxPackage *BingNews* -allusers | Remove-AppxPackage' & '"'
+ _GetDOSOutput($u)
+  $u = 'powershell -Command ' & '"' & 'Get-AppxPackage *GameBar* -allusers | Remove-AppxPackage' & '"'
+ _GetDOSOutput($u)
+  $u = 'powershell -Command ' & '"' & 'Get-AppxPackage *SolitaireCollection* -allusers | Remove-AppxPackage' & '"'
  _GetDOSOutput($u)
 
  Func _GetDOSOutput($sCommand)
