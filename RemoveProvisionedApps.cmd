@@ -1,3 +1,4 @@
+:: this has to be done on a per user basis as a profile is initially created. This script is good for single users.
 powershell -Command "Get-AppxPackage *candycrush* -allusers | Remove-AppxPackage"
 powershell -Command "Get-AppxPackage *xbox* -allusers | Remove-AppxPackage"
 powershell -Command "Get-AppxPackage *hiddencity* -allusers | Remove-AppxPackage"
