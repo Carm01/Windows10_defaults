@@ -13,8 +13,8 @@ IMPORTANT: LIne 40 is TimeZone information.
 Tweeks.au3 is the autoIT version that is designed to be compiled to an exe of the settings.cmd
 IMPORTANT: Line 116 sets TimeZone Information.
 
-RemoveProvisionedApps.cmd - is designed to remove a lot of the bloat ware on the start menu AFTER a user logs in to the machine
+RemoveProvisionedApps.cmd - is designed to remove a lot of the bloat ware on the start menu AFTER a user logs in to the machine. THis is good for a per user basis. I DO NOT RECCOMEND using this one as a start up script. Use the one below.
 
-ProvisionedApps_Removal.au3 - is an AUTOIT version that is designed to be compiled and ran as a delayed start up scrip on a per user basis. The timing is set to run 60 seconds after a person logs on to allow the profile to build itself.
+ProvisionedApps_Removal.au3 - is an AUTOIT version that is designed to be compiled and ran as a delayed start up scrip on a per user basis. The timing is set to run 60 seconds after a person logs on to allow the profile to build itself. This compiled script is non-intrusive and will show no signs of running and will automatically exit when done. In its current iteration it will run upon every user login and uses very low resources and will not interfere with the startup process.
 
 References: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
