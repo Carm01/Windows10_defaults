@@ -14,7 +14,7 @@ IMPORTANT: Line 39 sets Time Zone Information.
 settings_Current_USER.cmd - is an alternate to settings.cmd with a few changes to be run on current user logged in. if this is just a one off machine not being used by multiple people.
 IMPORTANT: LIne 40 is TimeZone information.
 
-Tweeks.au3 is the autoIT version that is designed to be compiled to an exe of the settings.cmd
+Tweeks.au3 is the autoIT version that is designed to be compiled to an exe to replace the settings.cmd. This can be run at the end of the sysprep process when a machine is finished imaging.
 IMPORTANT: Line 116 sets TimeZone Information.
 
 RemoveProvisionedApps.cmd - is designed to remove a lot of the bloat ware on the start menu AFTER a user logs in to the machine. This is good for a per user basis. I DO NOT RECCOMEND using this one as a start up script. Use the one below.
