@@ -78,4 +78,9 @@ REG ADD "HKU\DefaultUser\Control Panel\Desktop" /v "HungAppTimeout" /d "5000" /t
 REG ADD "HKU\DefaultUser\Control Panel\Desktop" /v "AutoEndTasks" /d "1" /t REG_SZ /f
 :: Turn Off pop-up blocker IE
 REG ADD "HKU\DefaultUser\Software\Microsoft\Internet Explorer\New Windows" /v "PopupMgr" /d 0 /t REG_DWORD /f
+:: set default Printer i.e Microsoft PDF
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "Device" /d "Microsoft Print to PDF,winspool,Ne01:" /t REG_DWORD /f
+:: alternately using a network printer path "\\\\networkpath\\printername,winspool,Ne04:" - - double check your setting 
+REG ADD HKU\DefaultUser\Software\Microsoft\Windows NT\CurrentVersion\Windows /v "LegacyDefaultPrinterMode" /d 1 /t REG_DWORD /f
+
 REG UNLOAD HKU\DefaultUser
