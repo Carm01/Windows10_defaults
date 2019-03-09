@@ -37,8 +37,6 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary" /v Value /d Deny /t REG_SZ /f
 
 
-
-
 :: Per user settings 
 REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT
 :: Adjust for best performance - check your values to make sure they are in line just as a precaution as this process was a bit tricky
