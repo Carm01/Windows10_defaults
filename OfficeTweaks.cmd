@@ -18,6 +18,8 @@ REG ADD HKU\DefaultUser\Software\Microsoft\Office\16.0\PowerPoint\Options /v "Di
 
 :: WODD Set default format to .docx
 REG ADD HKU\DefaultUser\Software\Microsoft\Office\16.0\Word\Options /v "DefaultFormat" /d "" /t REG_SZ /f
+:: Do not ask if Word is not default document handler
+REG ADD HKU\DefaultUser\Software\Microsoft\Office\16.0\Word\Options /v "AlertIfNotDefault" /d "0" /t REG_SZ /f
 
 REG UNLOAD HKU\DefaultUser
 
@@ -39,3 +41,5 @@ REG ADD HKCU\Software\Microsoft\Office\16.0\PowerPoint\Options /v "DisableSetTop
 
 :: WORD Set default format to .docx
 REG ADD HKCU\Software\Microsoft\Office\16.0\Word\Options /v "DefaultFormat" /d "" /t REG_SZ /f
+:: Do not ask if Word is not default document handler
+REG ADD HKCU\Software\Microsoft\Office\16.0\Word\Options /v "AlertIfNotDefault" /d "0" /t REG_SZ /f
