@@ -1,8 +1,12 @@
-:::: Next statements will deny access to the following apps under Privacy - 
-:: App access turn off camera
-REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam" /v Value /d Deny /t REG_SZ /f
 :: turn off Activity history log off required( top most check box
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /v PublishUserActivities /d 0 /t REG_DWORD /f
+:: Disable Activity Feed
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /v EnableActivityFeed /d 0 /t REG_DWORD /f
+:: Disable Upload user activities
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /v UploadUserActivities /d 0 /t REG_DWORD /f
+:::: Next statements will deny access to the following apps under Privacy - - Setting anyone of these back to allow allows toggle functionality
+:: App access turn off camera
+REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam" /v Value /d Deny /t REG_SZ /f
 :: Disable app diag info about your other apps
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics" /v Value /d Deny /t REG_SZ /f
 :: do not allow apps to access your file system
@@ -40,8 +44,8 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 :: Per user settings 
 REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT
 :: Adjust for best performance - Control Panel\System and Security\System - Advanced system Settings - Performance Settings - Adjust for best performance
-:: check your values to make sure they are in line just as a precaution as this process was a bit tricky
-:: https://www.tenforums.com/tutorials/6377-change-visual-effects-settings-windows-10-a.html
+::check your values to make sure they are in line just as a precaution as this process was a bit tricky
+:: :: https://www.tenforums.com/tutorials/6377-change-visual-effects-settings-windows-10-a.html
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects /v "VisualFXSetting" /d 2 /t REG_DWORD /f
 REG ADD "HKU\DefaultUser\Control Panel\Desktop" /v "UserPreferencesMask" /d "9012038010000000" /t REG_BINARY /f
 :: Turn off background apps
@@ -52,6 +56,7 @@ REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search" /v "B
 :: https://www.tenforums.com/tutorials/82980-turn-off-website-access-language-list-windows-10-a.html
 REG ADD "HKU\DefaultUser\Control Panel\International\User Profile" /v "HttpAcceptLanguageOptOut" /d 1 /t REG_DWORD /f
 :: Turn Off Suggested Content in Settings app
+:: https://www.tenforums.com/tutorials/100541-turn-off-suggested-content-settings-app-windows-10-a.html
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-338393Enabled" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-353694Enabled" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-353696Enabled" /d 0 /t REG_DWORD /f
