@@ -39,8 +39,9 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 :: Per user settings 
 REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT
-:: Adjust for best performance - check your values to make sure they are in line just as a precaution as this process was a bit tricky
-:: :: https://www.tenforums.com/tutorials/6377-change-visual-effects-settings-windows-10-a.html
+:: Adjust for best performance - Control Panel\System and Security\System - Advanced system Settings - Performance Settings - Adjust for best performance
+:: check your values to make sure they are in line just as a precaution as this process was a bit tricky
+:: https://www.tenforums.com/tutorials/6377-change-visual-effects-settings-windows-10-a.html
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects /v "VisualFXSetting" /d 2 /t REG_DWORD /f
 REG ADD "HKU\DefaultUser\Control Panel\Desktop" /v "UserPreferencesMask" /d "9012038010000000" /t REG_BINARY /f
 :: Turn off background apps
