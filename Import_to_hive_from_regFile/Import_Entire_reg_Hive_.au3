@@ -23,10 +23,10 @@ $RegTest = RegRead("HKEY_USERS\Temp\Environment", "Temp")
 $q = $q + 1
 If $RegTest <> "" Then
 
-	#Region Microsoft Office Upload icon systray display
+	#Region Do not display start screen for any application
 	$s = 'regedit /s office.reg'
 	RunWait('"' & @ComSpec & '" /c ' & $s, @SystemDir, @SW_HIDE)
-	#EndRegion Microsoft Office Upload icon systray display
+	#EndRegion Do not display start screen for any application
 
 	Do
 		Sleep(800)
