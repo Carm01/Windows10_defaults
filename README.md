@@ -21,4 +21,6 @@ RemoveProvisionedApps.cmd - is designed to remove a lot of the bloat ware on the
 
 ProvisionedApps_Removal.au3 - is an AUTOIT version that is designed to be compiled and ran as a delayed start up scrip on a per user basis. The timing is set to run 60 seconds after a person logs on to allow the profile to build itself. This compiled script is non-intrusive and will show no signs of running and will automatically exit when done. In its current iteration it will run upon every user login and uses very low resources and will not interfere with the startup or profile creation process. 
 
+AdditionalSettings.cmd are mostly app permissions from the location Settings -> Privacy, however there is a performance tweak in that file too. 
+
 References: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
