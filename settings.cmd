@@ -82,5 +82,6 @@ REG ADD "HKU\DefaultUser\Software\Microsoft\Internet Explorer\New Windows" /v "P
 REG ADD "HKU\DefaultUser\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "Device" /d "Microsoft Print to PDF,winspool,Ne01:" /t REG_DWORD /f
 :: alternately using a network printer path "\\\\networkpath\\printername,winspool,Ne04:" - - double check your setting 
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows NT\CurrentVersion\Windows /v "LegacyDefaultPrinterMode" /d 1 /t REG_DWORD /f
-
+:: Turn Off check boxes to select items
+REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "AutoCheckSelect" /d "0" /t REG_SZ /f
 REG UNLOAD HKU\DefaultUser
