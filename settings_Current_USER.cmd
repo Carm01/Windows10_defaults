@@ -82,3 +82,5 @@ REG ADD "HKCU\Control Panel\Desktop" /v "HungAppTimeout" /d "5000" /t REG_SZ /f
 REG ADD "HKCU\Control Panel\Desktop" /v "AutoEndTasks" /d "1" /t REG_SZ /f
 :: Turn Off pop-up blocker IE
 REG ADD "HKCU\Software\Microsoft\Internet Explorer\New Windows" /v "PopupMgr" /d 0 /t REG_DWORD /f
+:: Turn Off check boxes to select items
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "AutoCheckSelect" /d "0" /t REG_SZ /f
