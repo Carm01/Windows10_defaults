@@ -7,7 +7,7 @@ Sadly, I have found that a lot of sysadmins do not know what this actually means
 
 ### How it works
 Listed under the `:: Per user settings ` in the __settings.cmd__ script is how this process works. 
-- `REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT` OPens or loads the default hive, and gives it a name of `DefaultUser`. If you open up `regedit.exe` and expand the key `HKEY_USERS` you will see that reflected. Any changes made under that will take effect for all user next _new_ user login. You must unload it as well. 
+- `REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT` Opens or loads the default hive, and gives it a name of `DefaultUser`. If you open up `regedit.exe` and expand the key `HKEY_USERS` you will see that reflected. Any changes made under that will take effect for all user next _new_ user login. You must unload it as well. 
 There is nothing wrong with putting all your settings in once big script, just be sure you place all your `HKU\DefaultUser` settings within the _load_ and _unload_ section. 
 
 _I would recommend to ___not___ activate the Admin account as it could jack up your sysprep process and do not use copy profile setting in your unattend.xml file._
