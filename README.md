@@ -18,6 +18,7 @@ _I would recommend to ___not___ activate the Admin account as it could jack up y
 
 - __settings.cmd__ - Are the settings applied to the machine designed to replace sysprep Audit mode and copy profile mode as a way to effectively target individual settings. The hive modifications will take place upon the next NEW user login. Any preexisting profiles will not be effected. _Listed under per user setting is how one edits the default profile directly._ 
 __IMPORTANT: Line 39 sets Time Zone Information.__
+I have one here I tweak before I roll it over to here ( https://gist.github.com/Carm01/e17f8faef769f79c9259c7cd01a0d029 )
 
 - __settings_Current_USER.cmd__ - An alternate to settings.cmd with a few changes to be run on current user logged in. If this is just a one off machine not being used by multiple people. _hint: you can modify the per user settings for the default hive to add to the script to change with the current user as well if that is important._
 __IMPORTANT: LIne 40 is TimeZone information.__
