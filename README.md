@@ -20,7 +20,7 @@ _I would recommend to ___not___ activate the Admin account as it could jack up y
 __IMPORTANT: Line 39 sets Time Zone Information.__
 I have one here I tweak before I roll it over to here ( https://gist.github.com/Carm01/e17f8faef769f79c9259c7cd01a0d029 )
 
-- __settings_Current_USER.cmd__ - An alternate to settings.cmd with a few changes to be run on current user logged in. If this is just a one off machine not being used by multiple people. _hint: you can modify the per user settings for the default hive to add to the script to change with the current user as well if that is important._
+- __settings_Current_USER.cmd__ - An alternate to settings.cmd with a few changes to be run on current user logged in. If this is just a one off machine not being used by multiple people, or you do not want to modify the default hive just yet, this is your script. It is identical to the settings one without the default hive. _hint: you can modify the per user settings for the default hive to add to the script to change with the current user as well if that is important._
 __IMPORTANT: LIne 40 is TimeZone information.__
 
 - __Tweeks.au3__ - AutoIT version that is designed to be compiled to an exe to replace the settings.cmd. This can be run at the end of the sysprep process when a machine is finished imaging.
