@@ -1,4 +1,5 @@
 :: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
+:: remove the double colon to activate the code if it is commented out
 :: disable Cortana
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /d 0 /t REG_DWORD /f
 :: Disable Defender
@@ -48,15 +49,15 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v Prom
 :: turn off Advertising ID
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledByGroupPolicy /d 1 /t REG_DWORD /f
 :: Disable update and restart
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /d 1 /t REG_DWORD /f
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v AUPowerManagement /d 0 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /d 1 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v AUPowerManagement /d 0 /t REG_DWORD /f
 ::  Remove Lock in Account Picture Menu in Windows 10 but allows WINKEY + L
 :: https://www.tenforums.com/tutorials/61721-add-remove-lock-account-picture-menu-windows-10-a.html
-REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v ShowLockOption  /d 0 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v ShowLockOption  /d 0 /t REG_DWORD /f
 :: Disable Hibernation 
-REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager\Power" /v HibernteEnabled  /d 0 /t REG_DWORD /f
+::REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager\Power" /v HibernteEnabled  /d 0 /t REG_DWORD /f
 :: hide hibernation from menu 
-REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v HibernteEnabled  /d 0 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v HibernteEnabled  /d 0 /t REG_DWORD /f
 
 
 
@@ -103,10 +104,8 @@ REG ADD "HKCU\Software\Microsoft\Internet Explorer\New Windows" /v "PopupMgr" /d
 :: Turn Off check boxes to select items
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "AutoCheckSelect" /d "0" /t REG_SZ /f
 :: Set Control Panel view to Large icons (Classic)
-REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "StartupPage" /d "1" /t REG_SZ /f
-REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "AllItemsIconView" /d "0" /t REG_SZ /f
-:: Set num lock on
-REG ADD "HKCU\Control Panel\Keyboard" /v "InitialKeyboardIndicators" /d "2147483650" /t REG_SZ /f
+::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "StartupPage" /d "1" /t REG_SZ /f
+::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "AllItemsIconView" /d "0" /t REG_SZ /f
 ::Disable creation of Thumbs.db thumbnail cache files
-REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbnailCache" /d "1" /t REG_SZ /f
-REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbsDBOnNetworkFolders" /d "1" /t REG_SZ /f
+::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbnailCache" /d "1" /t REG_SZ /f
+::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbsDBOnNetworkFolders" /d "1" /t REG_SZ /f
