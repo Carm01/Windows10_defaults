@@ -32,6 +32,6 @@ __IMPORTANT: Line 116 sets TimeZone Information.__
 
 - __AdditionalSettings.cmd__ - Mostly app permissions from the location Settings -> Privacy, however there is a performance tweak in that file too. ___It is very important to understand the `VisualFXSetting` and `UserPreferencesMask` setting as it controls the settings under: `Right click this PC - properties - Advanced system Settings - Performance Settings`. Most people might want want to changes these and just let windows manage it, however some want to optimize performance.___
 
-- __Officetweaks.cmd__ - Takes care of some common annoyances. Each setting has an explanation. You might have to change the path if you are on Office3665.
+- __Officetweaks.cmd__ - I moved these to a dedicated section here: https://gist.github.com/Carm01/0df027dd1ddc57dd3044ca87565a6194
 
 References: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
