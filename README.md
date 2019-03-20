@@ -18,7 +18,6 @@ _I would recommend to ___not___ activate the Admin account as it could jack up y
 
 - __settings.cmd__ - Are the settings applied to the machine designed to replace sysprep Audit mode and copy profile mode as a way to effectively target individual settings. The hive modifications will take place upon the next NEW user login. Any preexisting profiles will not be effected. _Listed under per user setting is how one edits the default profile directly._ 
 __IMPORTANT: Line 39 sets Time Zone Information.__
-I have one here I tweak before I roll it over to here ( https://gist.github.com/Carm01/e17f8faef769f79c9259c7cd01a0d029 )
 
 - __settings_Current_USER.cmd__ - An alternate to settings.cmd with a few changes to be run on current user logged in. If this is just a one off machine not being used by multiple people, or you do not want to modify the default hive just yet, this is your script. It is identical to the settings one without the default hive. _hint: you can modify the per user settings for the default hive to add to the script to change with the current user as well if that is important._
 __IMPORTANT: LIne 40 is TimeZone information.__
@@ -33,5 +32,7 @@ __IMPORTANT: Line 116 sets TimeZone Information.__
 - __AdditionalSettings.cmd__ - Mostly app permissions from the location Settings -> Privacy, however there is a performance tweak in that file too. ___It is very important to understand the `VisualFXSetting` and `UserPreferencesMask` setting as it controls the settings under: `Right click this PC - properties - Advanced system Settings - Performance Settings`. Most people might want want to changes these and just let windows manage it, however some want to optimize performance.___
 
 - __Officetweaks.cmd__ - I moved these to a dedicated section here: https://gist.github.com/Carm01/0df027dd1ddc57dd3044ca87565a6194
+
+- I am working on an updated setting here that combines settings.cmd and additionalsettings.cmd into one and including all HKCU for the equivalent HKU. I am going to make all changes in the following code prior to moving it. You are free to look at it and offer suggestions ( https://gist.github.com/Carm01/e17f8faef769f79c9259c7cd01a0d029 ).
 
 References: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
