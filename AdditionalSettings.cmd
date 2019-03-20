@@ -39,12 +39,11 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary" /v Value /d Deny /t REG_SZ /f
 :: do not allow apps to access Videos
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary" /v Value /d Deny /t REG_SZ /f
-:: turn off the main gamebar switch
+:: turn off game-bar
 :: https://www.top-password.com/blog/disable-game-bar-and-game-dvr-in-windows-10/
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\GameDVR" /v AllowgameDVR /d 0 /t REG_DWORD /f
-:: some additional setting if you choose to impliment
-:: https://www.tenforums.com/tutorials/76094-turn-off-game-bar-tips-windows-10-a.html
-:: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
+
+
 
 
 :: Per user settings 
@@ -71,5 +70,14 @@ REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliver
 REG ADD HKU\DefaultUser\Software\Microsoft\InputPersonalization /v "RestrictImplicitInkCollection" /d 1 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\InputPersonalization /v "RestrictImplicitTextCollection" /d 1 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Personalization\Settings /v "AcceptedPrivacyPolicy" /d 0 /t REG_DWORD /f
+
+:: Disable Gamebar
+:: https://www.top-password.com/blog/disable-game-bar-and-game-dvr-in-windows-10/
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "AppCaptureEnabled"  /d 0 /t REG_SZ /f
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "HistoricalCaptureEnabled "  /d 0 /t REG_SZ /f
+:: https://www.tenforums.com/tutorials/76094-turn-off-game-bar-tips-windows-10-a.html
+REG ADD "HKU\DefaultUser\Software\Microsoft\GameBar" /v "ShowStartupPanel"  /d 0 /t REG_SZ /f
+:: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
+REG ADD "HKU\DefaultUser\SYSTEM\CurrentControlSet\Services\xbgm" /v "Start"  /d 4 /t REG_SZ /f
 
 REG UNLOAD HKU\DefaultUser
