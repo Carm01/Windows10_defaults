@@ -39,6 +39,12 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary" /v Value /d Deny /t REG_SZ /f
 :: do not allow apps to access Videos
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary" /v Value /d Deny /t REG_SZ /f
+:: turn off the main gamebar switch
+:: https://www.top-password.com/blog/disable-game-bar-and-game-dvr-in-windows-10/
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\GameDVR" /v AllowgameDVR /d 0 /t REG_DWORD /f
+:: some additional setting if you choose to impliment
+:: https://www.tenforums.com/tutorials/76094-turn-off-game-bar-tips-windows-10-a.html
+:: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
 
 
 :: Per user settings 
