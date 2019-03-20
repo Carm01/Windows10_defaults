@@ -51,7 +51,7 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledBy
 :: Disable update and restart
 ::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /d 1 /t REG_DWORD /f
 ::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v AUPowerManagement /d 0 /t REG_DWORD /f
-::  Remove Lock in Account Picture Menu in Windows 10 but allows WINKEY + L
+:: Remove Lock in Account Picture Menu in Windows 10 start menu but allows WINKEY + L
 :: https://www.tenforums.com/tutorials/61721-add-remove-lock-account-picture-menu-windows-10-a.html
 ::REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v ShowLockOption  /d 0 /t REG_DWORD /f
 :: Disable Hibernation 
