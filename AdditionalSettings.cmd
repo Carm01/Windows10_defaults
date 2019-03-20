@@ -80,4 +80,8 @@ REG ADD "HKU\DefaultUser\Software\Microsoft\GameBar" /v "ShowStartupPanel"  /d 0
 :: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
 REG ADD "HKU\DefaultUser\SYSTEM\CurrentControlSet\Services\xbgm" /v "Start"  /d 4 /t REG_SZ /f
 
+:: Turn On or Off App Suggestions on Start in Windows 10 REG ADD 
+REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "OemPreInstalledAppsEnabled" /d 0 /t REG_DWORD /f 
+REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "PreinstalledAppsEnabled" /d 0 /t REG_DWORD /f
+
 REG UNLOAD HKU\DefaultUser
