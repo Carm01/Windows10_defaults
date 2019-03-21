@@ -33,6 +33,6 @@ __IMPORTANT: Line 116 sets TimeZone Information.__
 
 - __Officetweaks.cmd__ - I moved these to a dedicated section here: https://gist.github.com/Carm01/0df027dd1ddc57dd3044ca87565a6194
 
-- I am working on an updated setting here that combines settings.cmd and additionalsettings.cmd into one and including all HKCU for the equivalent HKU. I am going to make all changes in the following code prior to moving it. You are free to look at it and offer suggestions ( https://gist.github.com/Carm01/e17f8faef769f79c9259c7cd01a0d029 ).
+- I broke the lists into Privacy settings, Annoyances/Tweaks, performance, and most common to use in an area here ( https://gist.github.com/Carm01/3b83d78a0d99cc78ff1d46385ba68a13 ). This will eventually be moved to this to this repository to clean it up a bit
 
 References: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
