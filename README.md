@@ -35,4 +35,9 @@ __IMPORTANT: Line 116 sets TimeZone Information.__
 
 - I broke the lists into Privacy settings, Annoyances/Tweaks, performance, and most common to use in an area here ( https://gist.github.com/Carm01/3b83d78a0d99cc78ff1d46385ba68a13 ). This will eventually be moved to this to this repository to clean it up a bit
 
-References: https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
+References: 
+https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
+
+https://github.com/Disassembler0/Win10-Initial-Setup-Script/blob/master/Win10.psm1
+
+https://gist.github.com/alirobe/7f3b34ad89a159e6daa1
