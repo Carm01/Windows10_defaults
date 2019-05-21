@@ -33,7 +33,7 @@ __IMPORTANT: Line 116 sets TimeZone Information.__
 
 - __Officetweaks.cmd__ - I moved these to a dedicated section here: https://gist.github.com/Carm01/0df027dd1ddc57dd3044ca87565a6194
 
-- I broke the lists into Privacy settings, Annoyances/Tweaks, performance, and most common to use in an area here ( https://gist.github.com/Carm01/3b83d78a0d99cc78ff1d46385ba68a13 ). This will eventually be moved to this to this repository to clean it up a bit
+- I broke the lists into Privacy settings, Annoyances/Tweaks, performance, and most common to use in an area here ( https://gist.github.com/Carm01/3b83d78a0d99cc78ff1d46385ba68a13 ). This will eventually be moved to this to this repository to clean it up a bit. _Please note that any tweeks to this main thread will be done there. __Only__ things that are of higher importance will be made here. So please use that gist.github link for updates and tweeks to the code._
 
 References: 
 https://stealthpuppy.com/customize-the-windows-default-profile/#.XEfajs17mUm
