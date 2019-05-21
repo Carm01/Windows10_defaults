@@ -93,6 +93,7 @@ REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliver
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-338388Enabled" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SilentInstalledAppsEnabled" /d 0 /t REG_DWORD /f
 :: Turn off "Get tips, tricks and suggestions as you use Windows"
+:: WARNING, THIS COULD BREAK WINDOWS 10 SPOTLIGHT. LEAVE SET TO 1 IF YOU WANT WINDOWS SPOTLIGHT TO WORK
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SoftLandingEnabled" /d 0 /t REG_DWORD /f
 :: Prevent “welcome to the best windows ever”
 REG ADD HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-310093Enabled" /d 0 /t REG_DWORD /f
