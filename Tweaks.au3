@@ -118,7 +118,8 @@ RegWrite('HKLM64\SYSTEM\CurrentControlSet\Control\TimeZoneInformation', 'TimeZon
 
 #Region Disable UAC
 RegWrite('HKLM64\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System', 'ConsentPromptBehaviorAdmin', 'REG_DWORD', '0')
-RegWrite('HKLM64\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System', 'EnableLUA', 'REG_DWORD', '0')
+;RegWrite('HKLM64\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System', 'EnableLUA', 'REG_DWORD', '0'); this breaks UAC
+RegWrite('HKLM64\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System', 'PromptOnSecureDesktop', 'REG_DWORD', '0')
 #EndRegion Disable UAC
 
 #Region turn off Advertising ID
