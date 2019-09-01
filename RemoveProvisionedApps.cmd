@@ -10,3 +10,8 @@ powershell -Command "Get-AppxPackage *SolitaireCollection* -allusers | Remove-Ap
 powershell -Command "Get-AppxPackage *zune* -allusers | Remove-AppxPackage"
 powershell -Command "Get-AppxPackage *skype* -allusers | Remove-AppxPackage"
 powershell -Command "Get-AppxPackage *YourPhone* -allusers | Remove-AppxPackage"
+
+
+::Powershell
+::Get all provisioned app packages on your computer
+::Get-AppxProvisionedPackage -Online | select DisplayName | sort DisplayName
