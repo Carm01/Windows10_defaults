@@ -62,7 +62,9 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledBy
 
 
 :: HKCU setting applied to current user of machine
-:: Hide Microsoft Office Upload icon sys-tray display
+:: Current user setting applied
+
+:: Hide Microsoft Office Upload icon systray display
 REG ADD HKCU\Software\Microsoft\Office\16.0\Common\FileIO /v "DisableNotificationIcon" /d 1 /t REG_DWORD /f
 :: Remove People icon from system tray
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v "PeopleBand" /d 0 /t REG_DWORD /f
@@ -77,9 +79,12 @@ REG ADD HKCU\SOFTWARE\Microsoft\Personalization\Settings /v "AcceptedPrivacyPoli
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "RestrictImplicitTextCollection" /d 1 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "RestrictImplicitInkCollection" /d 1 /t REG_DWORD /f
 REG ADD HKCU\SOFTWARE\Microsoft\InputPersonalization\TrainedDataStore /v "HarvestContacts" /d 0 /t REG_DWORD /f
-:: Show File Extensions/hidden files
-REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v "Hidden" /d 1 /t REG_DWORD /f
-REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v "HideFileExt" /d 0 /t REG_DWORD /f
+:: Show hidden files
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /d 1 /t REG_DWORD /f
+:: Show Show File extensions
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /d 0 /t REG_DWORD /f
+:: Show Protected Operating System Files and folders
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSuperHidden" /d 1 /t REG_DWORD /f
 :: Show this PC on all users desktop
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel /v "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /d 0 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu /v "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /d 0 /t REG_DWORD /f
@@ -92,6 +97,7 @@ REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-338388Enabled" /d 0 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SilentInstalledAppsEnabled" /d 0 /t REG_DWORD /f
 :: Turn off "Get tips, tricks and suggestions as you use Windows"
+:: WARNING, THIS COULD BREAK WINDOWS 10 SPOTLIGHT. LEAVE SET TO 1 IF YOU WANT WINDOWS SPOTLIGHT TO WORK
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SoftLandingEnabled" /d 0 /t REG_DWORD /f
 :: Prevent “welcome to the best windows ever”
 REG ADD HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v "SubscribedContent-310093Enabled" /d 0 /t REG_DWORD /f
@@ -103,9 +109,16 @@ REG ADD "HKCU\Control Panel\Desktop" /v "AutoEndTasks" /d "1" /t REG_SZ /f
 REG ADD "HKCU\Software\Microsoft\Internet Explorer\New Windows" /v "PopupMgr" /d 0 /t REG_DWORD /f
 :: Turn Off check boxes to select items
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "AutoCheckSelect" /d "0" /t REG_SZ /f
+:: Show More Details in File Transfer Dialog
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v "EnthusiastMode" /d 1 /t REG_DWORD /f
+:: Do not let Windows manage your Printer
+REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "LegacyDefaultPrinterMode" /d 1 /t REG_DWORD /f
 :: Set Control Panel view to Large icons (Classic)
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "StartupPage" /d "1" /t REG_SZ /f
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "AllItemsIconView" /d "0" /t REG_SZ /f
 ::Disable creation of Thumbs.db thumbnail cache files
+:: IF these keys are left in the registry regardless of the values, windows display thunbnail view will not work
+:: Thumbs cache is located here -> C:\Users\%username%\AppData\Local\Microsoft\Windows\Explorer
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbnailCache" /d "1" /t REG_SZ /f
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbsDBOnNetworkFolders" /d "1" /t REG_SZ /f
+::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableThumbnails" /d "1" /t REG_DWORD /f
