@@ -114,6 +114,10 @@ REG ADD "HKU\DefaultUser\Control Panel\Desktop" /v "AutoEndTasks" /d "1" /t REG_
 REG ADD "HKU\DefaultUser\Software\Microsoft\Internet Explorer\New Windows" /v "PopupMgr" /d 0 /t REG_DWORD /f
 :: Turn Off check boxes to select items
 REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "AutoCheckSelect" /d "0" /t REG_SZ /f
+:: Show More Details in File Transfer Dialog
+REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v "EnthusiastMode" /d 1 /t REG_DWORD /f
+:: Do not let Windows manage your Printer
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "LegacyDefaultPrinterMode" /d 1 /t REG_DWORD /f
 :: Set Control Panel view to Large icons (Classic)
 ::REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "StartupPage" /d "1" /t REG_SZ /f
 ::REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "AllItemsIconView" /d "0" /t REG_SZ /f
