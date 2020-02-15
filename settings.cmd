@@ -79,9 +79,12 @@ REG ADD HKU\DefaultUser\SOFTWARE\Microsoft\Personalization\Settings /v "Accepted
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "RestrictImplicitTextCollection" /d 1 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "RestrictImplicitInkCollection" /d 1 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\SOFTWARE\Microsoft\InputPersonalization\TrainedDataStore /v "HarvestContacts" /d 0 /t REG_DWORD /f
-:: Show File Extensions/hidden files
-REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v "Hidden" /d 1 /t REG_DWORD /f
-REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v "HideFileExt" /d 0 /t REG_DWORD /f
+:: Show hidden files
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /d 1 /t REG_DWORD /f
+:: Show Show File extensions
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /d 0 /t REG_DWORD /f
+:: Show Protected Operating System Files and folders
+REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSuperHidden" /d 1 /t REG_DWORD /f
 :: Show this PC on all users desktop
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel /v "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu /v "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /d 0 /t REG_DWORD /f
