@@ -118,6 +118,11 @@ REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Adva
 REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v "EnthusiastMode" /d 1 /t REG_DWORD /f
 :: Do not let Windows manage your Printer
 REG ADD "HKU\DefaultUser\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "LegacyDefaultPrinterMode" /d 1 /t REG_DWORD /f
+
+:: Disable "Restore previous folder windows at logon" 
+:: NOTE THIS REGEDIT NORMALLY DOES NOT EXIST. THIS SHOULD NOT HARM ANYTHING IF IT DOES NOT.
+REG delete "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "PersistBrowsers" /f
+
 :: Set Control Panel view to Large icons (Classic)
 ::REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "StartupPage" /d "1" /t REG_SZ /f
 ::REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v "AllItemsIconView" /d "0" /t REG_SZ /f
