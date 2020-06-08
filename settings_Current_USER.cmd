@@ -74,6 +74,8 @@ REG ADD "HKCU\Control Panel\Keyboard" /v "InitialKeyboardIndicators" /d 2 /t REG
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "BingSearchEnabled" /d 0 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "AllowSearchToUseLocation" /d 0 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "CortanaConsent" /d 0 /t REG_DWORD /f
+REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "DisableSearchBoxSuggestions" /d 1 /t REG_DWORD /f
+
 :: additional disable cortana
 REG ADD HKCU\SOFTWARE\Microsoft\Personalization\Settings /v "AcceptedPrivacyPolicy" /d 0 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "RestrictImplicitTextCollection" /d 1 /t REG_DWORD /f
