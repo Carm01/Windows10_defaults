@@ -9,10 +9,10 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v NoNewAppAlert /d 
 :: Prevent EDGE ICON from appearing
 REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer" /v DisableEdgeDesktopShortcutCreation /d 1 /t REG_DWORD /f
 :: Defer updates current branch 365 days
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferFeatureUpdates /d 1 /t REG_DWORD /f
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v BranchReadinessLevel /d 32 /t REG_DWORD /f
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferFeatureUpdatesPeriodInDays /d 365 /t REG_DWORD /f
-REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v PauseFeatureUpdatesStartTime /d 0 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferFeatureUpdates /d 1 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v BranchReadinessLevel /d 32 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferFeatureUpdatesPeriodInDays /d 365 /t REG_DWORD /f
+::REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v PauseFeatureUpdatesStartTime /d 0 /t REG_DWORD /f
 :: Prevent IE first run Wizard
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" /v DisableFirstRunCustomize /d 1 /t REG_DWORD /f
 :: Do not launch the privacy setting experience upon first time user login 1809
