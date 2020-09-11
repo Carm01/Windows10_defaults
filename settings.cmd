@@ -74,7 +74,7 @@ REG ADD HKU\DefaultUser\Software\Microsoft\Office\16.0\Common\FileIO /v "Disable
 :: Remove People icon from system tray
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v "PeopleBand" /d 0 /t REG_DWORD /f
 :: Enable NumLOck
-REG ADD "HKU\DefaultUser\Control Panel\Keyboard" /v "InitialKeyboardIndicators" /d 2 /t REG_DWORD /f
+REG ADD "HKU\DefaultUser\Control Panel\Keyboard" /v "InitialKeyboardIndicators" /d 2 /t REG_SZ /f
 :: Disallow WebSearch in search bar
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "BingSearchEnabled" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "AllowSearchToUseLocation" /d 0 /t REG_DWORD /f
