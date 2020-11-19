@@ -124,3 +124,5 @@ REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "LegacyDe
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbnailCache" /d "1" /t REG_SZ /f
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisableThumbsDBOnNetworkFolders" /d "1" /t REG_SZ /f
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableThumbnails" /d "1" /t REG_DWORD /f
+:: disable 'Get even more out of Windows' reg value does not normally exist so deleting it is default
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /d 0 /t REG_DWORD /f
