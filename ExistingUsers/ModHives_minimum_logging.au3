@@ -12,13 +12,11 @@
 #AutoIt3Wrapper_Res_Language=1033
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #NoTrayIcon
-Local $q = 0, $a
 #include <File.au3>
 #include <Debug.au3>
 Local $sFILE = 'c:\' & @ComputerName & '.txt'
-Local $qbefore, $qafter, $sUSER
+Local $sUSER, $a
 If UBound(ProcessList(@ScriptName)) > 2 Then Exit ; only one instance running
-$usn = @UserName
 $a = _FileListToArrayRec('c:\users', "*", $FLTAR_FOLDERS, $FLTAR_NORECUR, $FLTAR_SORT, $FLTAR_NOPATH)
 ;_DebugArrayDisplay($a)
 For $i = 1 To UBound($a) - 1
@@ -40,7 +38,6 @@ Func hive($sUSER) ; these changes are made to the default user hive
 	Run(@ComSpec & $cmd, "", "", @SW_HIDE)
 	Sleep(1000)
 	$RegTest = RegRead("HKEY_USERS\Temp\Environment", "Temp")
-	$q = $q + 1
 	If $RegTest <> "" Then
 
 		#Region Microsoft Office Powerpoint "disable extend these displays"
