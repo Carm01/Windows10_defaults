@@ -13,12 +13,10 @@
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #NoTrayIcon
 #include <File.au3>
-#include <Debug.au3>
 Local $sFILE = 'c:\' & @ComputerName & '.txt'
 Local $sUSER, $a
 If UBound(ProcessList(@ScriptName)) > 2 Then Exit ; only one instance running
 $a = _FileListToArrayRec('c:\users', "*", $FLTAR_FOLDERS, $FLTAR_NORECUR, $FLTAR_SORT, $FLTAR_NOPATH)
-;_DebugArrayDisplay($a)
 For $i = 1 To UBound($a) - 1
 	If $a[$i] = 'Public' Or $a[$i] = 'All Users' Or $a[$i] = 'Default User' Or $a[$i] = 'altirisad' Then ; profiles to ignore
 		;
