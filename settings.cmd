@@ -64,7 +64,9 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v "NoAUAsDe
 ::REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager\Power" /v HibernteEnabled  /d 0 /t REG_DWORD /f
 :: hide hibernation from menu 
 ::REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v HibernteEnabled  /d 0 /t REG_DWORD /f
-
+:: Enable Remote Desktop ( RDP ) default values are fDenyTSConnections=1, updateRDStatus=0
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /d 0 /t REG_DWORD /f
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v updateRDStatus /d 1 /t REG_DWORD /f
 
 
 :: Per user settings - Applied to all future users the log in for the first time.
