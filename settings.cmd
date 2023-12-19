@@ -82,6 +82,8 @@ REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "Bin
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "AllowSearchToUseLocation" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "CortanaConsent" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\SOFTWARE\Policies\Microsoft\Windows\Explorer /v "DisableSearchBoxSuggestions" /d 1 /t REG_DWORD /f
+:: Remove Garbage ads in Windws search bar
+REG ADD HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds\DSB /v "ShowDynamicContent" /d 0 /t REG_DWORD /f
 :: additional disable cortana
 REG ADD HKU\DefaultUser\SOFTWARE\Microsoft\Personalization\Settings /v "AcceptedPrivacyPolicy" /d 0 /t REG_DWORD /f
 REG ADD HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Search /v "RestrictImplicitTextCollection" /d 1 /t REG_DWORD /f
