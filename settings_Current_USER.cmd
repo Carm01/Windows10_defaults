@@ -75,6 +75,8 @@ REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "BingSearchEnab
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "AllowSearchToUseLocation" /d 0 /t REG_DWORD /f
 REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v "CortanaConsent" /d 0 /t REG_DWORD /f
 REG ADD HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer /v "DisableSearchBoxSuggestions" /d 1 /t REG_DWORD /f
+:: remove ads in searchbar
+REG ADD HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds\DSB /v "ShowDynamicContent" /d 0 /t REG_DWORD /f
 
 :: additional disable cortana
 REG ADD HKCU\SOFTWARE\Microsoft\Personalization\Settings /v "AcceptedPrivacyPolicy" /d 0 /t REG_DWORD /f
