@@ -128,3 +128,5 @@ REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "LegacyDe
 ::REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableThumbnails" /d "1" /t REG_DWORD /f
 :: disable 'Get even more out of Windows' reg value does not normally exist so deleting it is default
 REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /d 0 /t REG_DWORD /f
+:: Stops the Windows Feedback Experience from sending anonymous data
+REG ADD "HKCU\Software\Microsoft\Siuf\Rules" /v "PeriodInNanoSeconds" /d 0 /t REG_DWORD /f
