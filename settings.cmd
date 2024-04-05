@@ -139,4 +139,6 @@ REG delete "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\A
 ::REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableThumbnails" /d "1" /t REG_DWORD /f
 :: disable 'Get even more out of Windows' reg value does not normally exist so deleting it is default
 REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /d 0 /t REG_DWORD /f
+:: Disable Windows Copilot all users
+REG ADD "HKU\DefaultUser\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /d 1 /t REG_DWORD /f
 REG UNLOAD HKU\DefaultUser
