@@ -130,3 +130,5 @@ REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v "LegacyDe
 REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /d 0 /t REG_DWORD /f
 :: Stops the Windows Feedback Experience from sending anonymous data
 REG ADD "HKCU\Software\Microsoft\Siuf\Rules" /v "PeriodInNanoSeconds" /d 0 /t REG_DWORD /f
+:: Disabled Windows Copilot 
+REG ADD "HKCU\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /d 1 /t REG_DWORD /f
