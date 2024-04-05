@@ -141,4 +141,6 @@ REG delete "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\A
 REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /d 0 /t REG_DWORD /f
 :: Disable Windows Copilot all users
 REG ADD "HKU\DefaultUser\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /d 1 /t REG_DWORD /f
+:: disable search highlights all new users
+REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsDynamicSearchBoxEnabled" /d 0 /t REG_DWORD /f
 REG UNLOAD HKU\DefaultUser
