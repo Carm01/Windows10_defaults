@@ -58,6 +58,9 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledBy
 ::REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager\Power" /v HibernteEnabled  /d 0 /t REG_DWORD /f
 :: hide hibernation from menu 
 ::REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v HibernteEnabled  /d 0 /t REG_DWORD /f
+:: Disable Choose where to get apps in Windows 11 || Application Installation Control || App recommendation warnings. In other words, if you download an exe or msi you can install as you normally do without being nagged.
+:: https://www.elevenforum.com/t/choose-where-to-get-apps-in-windows-11.7370/
+REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v AicEnabled /d "Anywhere" /t REG_SZ /f
 
 
 
