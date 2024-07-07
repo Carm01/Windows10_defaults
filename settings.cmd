@@ -67,6 +67,9 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v "NoAUAsDe
 :: Enable Remote Desktop ( RDP ) default values are fDenyTSConnections=1, updateRDStatus=0
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /d 0 /t REG_DWORD /f
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v updateRDStatus /d 1 /t REG_DWORD /f
+:: Disable Choose where to get apps in Windows 11 || Application Installation Control || App recommendation warnings. In other words, if you download an exe or msi you can install as you normally do without being nagged.
+:: https://www.elevenforum.com/t/choose-where-to-get-apps-in-windows-11.7370/
+REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v AicEnabled /d "Anywhere" /t REG_SZ /f
 
 
 :: Per user settings - Applied to all future users the log in for the first time.
