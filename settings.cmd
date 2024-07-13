@@ -149,4 +149,7 @@ REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSetting
 :: disable Suggested actions
 :: https://allthings.how/how-to-disable-suggested-actions-in-windows-11/
 REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard" /v "Disabled" /d 1 /t REG_DWORD /f
+:: Turn Off Typing Insights
+:: https://www.tenforums.com/tutorials/113073-turn-off-typing-insights-windows-10-a.html
+REG ADD "HKU\DefaultUser\Software\Microsoft\input\Settings\" /v "InsightsEnabled" /d 0 /t REG_DWORD /f
 REG UNLOAD HKU\DefaultUser
