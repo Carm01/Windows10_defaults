@@ -143,5 +143,5 @@ REG ADD "HKCU\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWin
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsDynamicSearchBoxEnabled" /d 0 /t REG_DWORD /f
 :: disable Suggested actions
 :: https://allthings.how/how-to-disable-suggested-actions-in-windows-11/
-REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard" /v "Disabled" /d 0 /t REG_DWORD /f
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard" /v "Disabled" /d 1 /t REG_DWORD /f
 
