@@ -146,4 +146,7 @@ REG ADD "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\UserProfileEn
 REG ADD "HKU\DefaultUser\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /d 1 /t REG_DWORD /f
 :: disable search highlights all new users
 REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsDynamicSearchBoxEnabled" /d 0 /t REG_DWORD /f
+:: disable Suggested actions
+:: https://allthings.how/how-to-disable-suggested-actions-in-windows-11/
+REG ADD "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard" /v "Disabled" /d 0 /t REG_DWORD /f
 REG UNLOAD HKU\DefaultUser
