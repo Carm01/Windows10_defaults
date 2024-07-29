@@ -65,6 +65,8 @@ REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledBy
 :: Disable Choose where to get apps in Windows 11 || Application Installation Control || App recommendation warnings. In other words, if you download an exe or msi you can install as you normally do without being nagged.
 :: https://www.elevenforum.com/t/choose-where-to-get-apps-in-windows-11.7370/
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v AicEnabled /d "Anywhere" /t REG_SZ /f
+:: Disable/Remove Copilot icon from Search on Windows 11. Microsoft is finding new was to infest windows with AI. ref: https://www.thewindowsclub.com/how-to-remove-copilot-icon-from-search-on-windows
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions  /d 1 /t REG_DWORD /f
 
 
 
